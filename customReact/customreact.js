@@ -30,5 +30,14 @@ const reactElement = {
 };
 
 const mainContainer = document.querySelector("#root");
+const value = document.querySelector("#value");
 
 customRender(reactElement, mainContainer);
+
+let counter = 15;
+function addValue(){
+   counter += 1;
+   console.log(counter);
+   
+   value.innerHTML = `<h2> ${counter} </h2>`
+}
