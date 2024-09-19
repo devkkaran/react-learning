@@ -10,7 +10,7 @@ let [counter, setaddValue] = useState(15);
 
     const addValue = () => {
       // console.log("Value Added", Math.random());
-      // setaddValue(counter + 1)
+      setaddValue(counter + 1)
       // setaddValue(preCounter => preCounter + 1)   // This is Interview Question for Java Script Fibre Algorithm
       // setaddValue(preCounter => preCounter + 1)
       // setaddValue(preCounter => preCounter + 1)
