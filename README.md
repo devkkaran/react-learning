@@ -1,3 +1,3 @@
 # React-Learning
 
-## SLearn React With Chai aur Code
+## Learn React With Chai aur Code
