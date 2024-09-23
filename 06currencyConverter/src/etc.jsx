@@ -3,16 +3,15 @@ import { InputBox } from "./components/index.js";
 import useCurrencyInfo from "./hooks/useCurrencyInfo";
 
 function App() {
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState(null); // Default to 0
   const [from, setFrom] = useState("usd");
   const [to, setTo] = useState("inr");
-  const [convertedAmount, setconvertedAmount] = useState(0);
+  const [convertedAmount, setConvertedAmount] = useState(0);
 
-  const currencyInfo = useCurrencyInfo(from); // Hooks che shu Function
+  const currencyInfo = useCurrencyInfo(from); // Custom hook fetching currency data
   console.log(currencyInfo);
 
-  const options = Object.keys(currencyInfo);
-  // console.log("options", options[23]);
+  const options = Object.keys(currencyInfo || {}); // Avoid errors if currencyInfo is undefined
 
   const swap = () => {
     const temp = from; // Temporarily store "from" currency
@@ -22,7 +21,21 @@ function App() {
   };
 
   const convert = () => {
-    setconvertedAmount(amount * currencyInfo[to.toLowerCase().trim()]);
+    if (amount && currencyInfo[to.toLowerCase().trim()]) {
+      setConvertedAmount(amount * currencyInfo[to.toLowerCase().trim()]);
+      // let converValue = amount * currencyInfo[to.toLowerCase().trim()];
+      // setConvertedAmount(converValue);
+
+
+      console.log(` Amount: ${amount}`);
+      console.log(`${to}`);
+      console.log(`${to.toLowerCase().trim()}`);
+      console.log(`${to.toLowerCase().trim().length}`);
+      console.log(`${ currencyInfo[to.toLowerCase().trim()]}`);
+      console.log(`Converted Amount: ${convertedAmount}`);
+    } else {
+      console.log("Invalid amount or missing currency information.");
+    }
   };
 
   return (
@@ -45,10 +58,9 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOption={options}
-                onCurrencyChange={(currency) => setFrom(currency)} // Correctly set currency
+                onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
-                // amountDisable = {false}
               />
             </div>
             <div className="relative w-full h-0.5">
@@ -57,7 +69,7 @@ function App() {
                 className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 border-2 border-white rounded-md bg-blue-600 text-white px-2 py-0.5"
                 onClick={swap}
               >
-                swap
+                Swap
               </button>
             </div>
             <div className="w-full mt-1 mb-4">
@@ -66,7 +78,7 @@ function App() {
                 amount={convertedAmount}
                 currencyOption={options}
                 onCurrencyChange={(selectCurrency) => setTo(selectCurrency)}
-                selectCurrency={to} // Correct currency passed here
+                selectCurrency={to}
                 amountDisable={true}
               />
             </div>
@@ -82,4 +94,5 @@ function App() {
     </div>
   );
 }
+
 export default App;

@@ -18,7 +18,7 @@ function useCurrencyInfo(currency) {
                 const result = await res.json();
                 
                 setData(result[currency]); // result already contains the relevant data
-                console.log(data);
+                // console.log(` Comes From currencyInfo.Js ${data}`);
             } catch (error) {
                 console.error("Error fetching currency data:", error);
             }
