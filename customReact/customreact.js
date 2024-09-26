@@ -38,6 +38,8 @@ let counter = 15;
 function addValue(){
    counter += 1;
    console.log(counter);
+   const button = document.getElementsByTagName('button');
+   console.log(button);
    
    value.innerHTML = `<h2> ${counter} </h2>`
 }

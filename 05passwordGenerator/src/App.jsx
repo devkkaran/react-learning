@@ -10,6 +10,8 @@ function App() {
 
   // ref Hook
   const passwordRef = useRef(null);
+  console.log(length);
+  
 
   // useCallback  Hook for manage password generator
   const passwordGenerator = useCallback(() => {

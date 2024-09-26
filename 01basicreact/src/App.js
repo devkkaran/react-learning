@@ -4,7 +4,7 @@ function App() {
   return (
     <>
     <Chai />
-    {/* <h1>Devkaran aur React</h1> */}
+    <h1>Devkaran aur React</h1>
     </>
   );
 }
