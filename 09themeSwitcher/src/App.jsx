@@ -4,7 +4,7 @@ import "./App.css";
 import ThemeBtn from "./components/ThemeBtn";
 import Card from "./components/Card";
 
-function App() {
+export default function App() {
   const [themeMode, setThemeMode] = useState("light"); // amuk samaye aapnne khyal nathi hoto ke aa objcet mathi lidhe varibble ni functionality shu che mate tene tej namthi method declare karid do
 
   const lightTheme = () => {
@@ -29,15 +29,18 @@ function App() {
             <ThemeBtn />
           </div>
 
-          <div className="w-full max-w-sm mx-auto ">
-            <Card />
-          
-            <Card />
+          <div className="w-full max-w-sm mx-auto">
+            <Card
+              webseriesName="Suits "
+              src="https://v3img.voot.com/v3Storage/assets/16x9-1715353645099.jpg"
+            />
+            <Card
+              webseriesName="The Night Manager"
+                src="https://i.ytimg.com/vi/6QJQysiUxKc/maxresdefault.jpg"
+            />
           </div>
         </div>
       </div>
     </ThemeProvider>
   );
 }
-
-export default App;

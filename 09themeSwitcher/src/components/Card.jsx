@@ -1,18 +1,21 @@
 import React from 'react'
 
-export default function Card() {
+export default function Card({webseriesName, prize, src}) {
 
 
     return (
         <div className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 ">
             <a href="/">
-                <img className="p-8 rounded-t-lg" src="https://v3img.voot.com/v3Storage/assets/16x9-1715353645099.jpg" alt="product_image1" />
+                <img className="p-8 rounded-t-lg" src={src} alt="product_image1" />
             </a>
             <div className="px-5 pb-5">
                 <a href="/">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                        Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport
+                        {webseriesName}
                     </h5>
+                    <h4 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                        Watch all Season on this OTT Channel!!
+                    </h4>
                 </a>
                 <div className="flex items-center mt-2.5 mb-5">
                     <svg
@@ -65,7 +68,7 @@ export default function Card() {
                     </span>
                 </div>
                 <div className="flex items-center justify-between">
-                    <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
+                    <span className="text-3xl font-bold text-gray-900 dark:text-white">{prize}</span>
                     <a
                         href="/"
                         className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
