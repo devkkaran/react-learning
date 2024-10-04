@@ -11,39 +11,39 @@ import User from './components/User/User.jsx'
 import Github from './components/Github/Github.jsx'
 
 
-// const router = createBrowserRouter([
-//   {
-//     path: '/', // slash top level element che
-//     element: <Layout/>,
-//     children: [
-//         {
-//           path:"",
-//           element: <Home/>
-//         },
-//         {
-//           path: "about",
-//           element:<About/>
-//         },
-//         {
-//           path: "contact",
-//           element:<Contact/>
-//         }
-//     ]  // children ni andar furhter value add thay che
-//   }
-// ]) // method che jeni andar array che
+const router = createBrowserRouter([
+  {
+    path: '/', // slash top level element che
+    element: <Layout/>,
+    children: [
+        {
+          path:"",
+          element: <Home/>
+        },
+        {
+          path: "about",
+          element:<About/>
+        },
+        {
+          path: "contact",
+          element:<Contact/>
+        }
+    ]  // children ni andar furhter value add thay che
+  }
+]) // method che jeni andar array che
 
-const router = createBrowserRouter(
-  createRoutesFromElements(
-    <Route path='/' element={<Layout />}>
-      <Route path="" element={<Home />}></Route>
-      <Route path="about" element={<About />}></Route>
-      <Route path="contact" element={<Contact />}></Route>
-      <Route path="user/:userId" element={<User />}></Route>
-      <Route path="github" element={<Github />}></Route>
+// const router = createBrowserRouter(
+//   createRoutesFromElements(
+//     <Route path='/' element={<Layout />}>
+//       <Route path="" element={<Home />}></Route>
+//       <Route path="about" element={<About />}></Route>
+//       <Route path="contact" element={<Contact />}></Route>
+//       <Route path="user/:userId" element={<User />}></Route>
+//       <Route path="github" element={<Github />}></Route>
       
-    </Route>
-  )
-)
+//     </Route>
+//   )
+// )
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
