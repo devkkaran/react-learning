@@ -4,7 +4,7 @@ import { useLoaderData } from "react-router-dom";
 
 export const githubInfoLoader = async () => {
     try {
-      const res = await fetch("https://api.github.com/users/hiteshchoudhary");
+      const res = await fetch("https://api.github.com/users/devkkaran1");
   
       // if (!res.ok) {
       //   throw new Error("Failed to fetch GitHub data");

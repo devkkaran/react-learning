@@ -9,9 +9,9 @@ export default function Github(){
                 const res = await fetch('https://api.github.com/users/devkkaran1') 
     
                 const result = await res.json();
-                console.log(result);
+                console.log(result, "Result");
                  setData(result)
-                 console.log(data);
+                 console.log(data, "Data");
                  
             }
             catch(error){
