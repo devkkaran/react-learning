@@ -15,7 +15,7 @@ export const todoSlice = createSlice({
   reducers: {
     // ama property ane function ave che
 
-    // Context api ma aapne function khale declare karta hata pn ahi apne tene define pnarishu reducers ni andar
+    // Context api ma aapne function khale declare karta hata pn ahi apne tene define pn karishu reducers ni andar
     addTodo: (state, action) => {
       const todo = {
         id: nanoid(),
